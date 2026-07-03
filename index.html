@@ -3,290 +3,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sachi Singh | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Sachi Singh - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #1a202c;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, #e0f2fe, #b8dff5);
+            padding: 35px 40px 25px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #0b2b44;
+            margin-bottom: 4px;
+        }
+
+        .header .tagline {
+            font-size: 1.05rem;
+            color: #1e4a6f;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px 30px;
+            margin-top: 14px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: #1a5a8c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 22px 40px 18px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0b2b44;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 3px solid #3b82f6;
+            display: inline-block;
+            letter-spacing: 0.3px;
+        }
+
+        .summary {
+            color: #2d3748;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* ===== ITEMS ===== */
+        .education-item,
+        .experience-item,
+        .project-item,
+        .certification-item,
+        .activity-item {
+            margin-bottom: 18px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #0b2b44;
+        }
+
+        .item-subtitle {
+            color: #4a5568;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .item-date {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #0b2b44;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 4px;
+        }
+
+        li {
+            margin-bottom: 4px;
+            color: #2d3748;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-category {
+            margin-bottom: 12px;
+        }
+
+        .skills-category-title {
+            font-weight: 600;
+            color: #1e4a6f;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #e8f0fe;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #1a365d;
+            border: 1px solid #dbe7f4;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 24px 18px 18px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 18px 20px 14px;
+            }
+
+            .contact-info {
+                gap: 10px 16px;
+                font-size: 0.85rem;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-date {
+                margin-top: 2px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <h2>Sachi Singh</h2>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Sachi Singh</h1>
-                <p class="hero-subtitle">Computer Science Engineering Student</p>
-                <p class="hero-desc">Specializing in Cybersecurity, IoT, and Data Science with Blockchain Technology</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <!-- Replace the placeholder with your image URL -->
-                <div class="image-container">
-                    <img src="WhatsApp Image 2025-11-26 at 19.59.57_27401d9b.jpg" alt="Sachi Singh" class="profile-image">
-                    <!-- Fallback placeholder if image fails to load -->
-                    <div class="image-placeholder fallback">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <div class="resume-container">
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>
-                    Computer Science Engineering student at Sikkim Manipal Institute of Technology with a strong focus 
-                    on Cybersecurity, IoT, and Data Science. Passionate about developing innovative solutions through 
-                    technology. I am currently working on geotemporal image analysis for OSINT applications.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2023–2027</div>
-                    <div class="timeline-content">
-                        <h3>Sikkim Manipal Institute of Technology</h3>
-                        <p class="timeline-subtitle">B.Tech Computer Science Engineering</p>
-                        <p class="timeline-details">CGPA: 8.4 | Specialization in Cybersecurity, IoT, Data Science with Blockchain Technology</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">June 2024–July 2024</div>
-                    <div class="timeline-content">
-                        <h3>National Informatics Centre (NIC)</h3>
-                        <p class="timeline-subtitle">Summer Intern</p>
-                        <ul class="timeline-list">
-                            <li>Gained hands-on experience in government IT infrastructure and e-governance projects</li>
-                            <li>Assisted in software development and maintenance tasks</li>
-                            <li>Completed the workflow of the website</full-s></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Geotemporal Image Analysis for OSINT</h3>
-                        <span class="project-date">2024–Present</span>
-                    </div>
-                    <p class="project-desc">
-                        Developing a CNN-based model to predict image geolocation within the SMIT campus using computer vision and machine learning techniques.
-                    </p>
-                    <ul class="project-features">
-                        <li>Implementing location mapping using Python, Scikit-Learn, TensorFlow</li>
-                        <li>Designing data pipeline with MakeSense.ai annotation and CSV storage</li>
-                        <li>Employing Steghide for steganographic analysis</li>
-                        <li>Planning evaluation with Precision/Recall, Confusion Matrix, and MAE</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">Scikit-Learn</span>
-                        <span class="tech-tag">Computer Vision</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>NOC Verification Portal</h3>
-                        <span class="project-date">2024 (1 month 10 days)</span>
-                    </div>
-                    <p class="project-desc">
-                        Engineered a full-stack web portal for No Objection Certificate verification with complete development and deployment.
-                    </p>
-                    <ul class="project-features">
-                        <li>Utilized PHP for server-side logic and Bootstrap for responsive front-end</li>
-                        <li>Completed end-to-end development and deployment</li>
-                        <li>Delivered within project timeline</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">Bootstrap</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Full-Stack</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">HTML</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Developer Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PyCharm</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Jupyter Notebook</span>
-                        <span class="skill-tag">MySQL Workbench</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Coursework</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Data Structures & Algorithms</span>
-                        <span class="skill-tag">Object Oriented Programming</span>
-                        <span class="skill-tag">IoT & Microcontrollers</span>
-                        <span class="skill-tag">Database Management Systems</span>
-                        <span class="skill-tag">Compiler Design</span>
-                        <span class="skill-tag">IoT</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-grid">
-                <div class="cert-item">
-                    <h4>Fundamentals of Cybersecurity</h4>
-                    <span class="cert-provider">Coursera • 2024</span>
-                    <button class="cert-btn" data-cert="cybersecurity">
-                        View Certificate
-                    </button>
-                </div>
-                <div class="cert-item">
-                    <h4>Hedera Workshop on Hashgraph Developer Course</h4>
-                    <span class="cert-provider">2024</span>
-                    <button class="cert-btn" data-cert="hedera">
-                        View Certificate
-                    </button>
-                </div>
-                <div class="cert-item">
-                    <h4>Introduction to Internet Of Things</h4>
-                    <span class="cert-provider">NPTEL</span>
-                    <button class="cert-btn" data-cert="nptel">
-                        View Certificate
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certificate Modal -->
-    <div id="certModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="modal-body">
-                <img id="certImage" src="" alt="Certificate">
-                <div class="cert-info">
-                    <h3 id="certTitle"></h3>
-                    <p id="certProvider"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!-- Contact Section -->
-<section id="contact" class="section">
-    <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content">
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <h1>SACHI SINGH</h1>
+            <p class="tagline">Computer Science Engineer | Full Stack Developer | Cybersecurity Enthusiast</p>
             <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+919531969126" class="contact-link">+91-9531969126</a>
+                <span class="contact-item">📍 Port Blair, Andaman &amp; Nicobar Islands</span>
+                <span class="contact-item">📞 +91-9531969126</span>
+                <span class="contact-item">✉️ singhsachi0822@gmail.com</span>
+                <span class="contact-item"><a href="https://www.linkedin.com/in/sachi-singh-5222a3266" target="_blank">🔗 LinkedIn</a></span>
+                <span class="contact-item"><a href="https://github.com/sachisingh0822-04" target="_blank">🐙 GitHub</a></span>
+                <span class="contact-item"><a href="https://sachisingh0822-04.github.io/My-repository/" target="_blank">🌐 Portfolio</a></span>
+            </div>
+        </div>
+
+        <!-- ===== PROFESSIONAL SUMMARY ===== -->
+        <div class="section">
+            <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+            <p class="summary">Computer Science Engineering student specializing in Cybersecurity, IoT, Data Science, and Blockchain Technology. Passionate full-stack developer with hands-on experience in web and app development, database integration, and secure system design. Strong leadership and communication skills honed through active participation in technical and literary societies.</p>
+        </div>
+
+        <!-- ===== EDUCATION ===== -->
+        <div class="section">
+            <h2 class="section-title">EDUCATION</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="item-title">Sikkim Manipal Institute of Technology, Sikkim</span>
+                    <span class="item-date">2023 – 2027</span>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:singhsachi0822@gmail.com" class="contact-link">
-                        singhsachi0822@gmail.com
-                    </a>
+                <div class="item-subtitle">B.Tech – Computer Science Engineering (Cybersecurity, IoT, Data Science, Blockchain)</div>
+                <div><strong>GPA:</strong> 8.5 &nbsp;|&nbsp; <strong>Merit Scholarship (40%)</strong> (2023–current)</div>
+                <ul style="margin-top:6px;">
+                    <li><span class="highlight">Co-Coordinator</span> – Reverbs: The Literary &amp; Debating Society (2025)</li>
+                    <li><span class="highlight">Executive Lead</span> – Reverbs (2024)</li>
+                    <li><span class="highlight">Cultural Secretary</span> – All Core Computer Engineering Student's Society (Current)</li>
+                    <li><span class="highlight">Member</span> – Computer Society of India (2025)</li>
+                    <li>Completed <span class="highlight">PWC Launchpad</span> program (2026)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== EXPERIENCE ===== -->
+        <div class="section">
+            <h2 class="section-title">EXPERIENCE</h2>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">AIBI Technologies</span>
+                    <span class="item-date">May 2026 – Aug 2026</span>
                 </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/sachi-singh-5222a32b6
-                    /" target="_blank" class="contact-link">
-                        LinkedIn Profile
-                    </a>
+                <div class="item-subtitle">Full Stack Intern</div>
+                <ul>
+                    <li>Developed and maintained dynamic websites with seamless frontend-backend integration.</li>
+                    <li>Built responsive UIs using <span class="highlight">React.js</span> and <span class="highlight">Tailwind CSS</span>.</li>
+                    <li>Designed and managed <span class="highlight">MySQL</span> and <span class="highlight">MongoDB</span> databases for efficient data storage.</li>
+                    <li>Implemented <span class="highlight">RESTful APIs</span> for smooth client-server communication.</li>
+                    <li>Contributed to <span class="highlight">mobile app development</span> ensuring cross-platform compatibility.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">National Informatics Center (NIC)</span>
+                    <span class="item-date">June 2025 – July 2025</span>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Port Blair, Andaman and Nicobar Islands</span>
+                <div class="item-subtitle">Summer Intern</div>
+                <ul>
+                    <li>Developed an <span class="highlight">NOC Verification Portal</span> to monitor application verification status.</li>
+                    <li>Implemented full-stack application using industry-standard architecture and deployment practices.</li>
+                    <li>Digitized a complete manual process and enabled real-time status tracking.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">Commonwealth Bank</span>
+                    <span class="item-date">Feb 2026</span>
+                </div>
+                <div class="item-subtitle">Job Simulation – Introduction to Cybersecurity</div>
+                <ul>
+                    <li>Completed simulation as a cybersecurity generalist specializing in <span class="highlight">fraud detection</span>.</li>
+                    <li>Built <span class="highlight">Splunk dashboards</span> to detect fraud patterns.</li>
+                    <li>Responded to simulated cybersecurity incidents including containment and recovery.</li>
+                    <li>Designed password security infographics following <span class="highlight">ACSC</span> guidelines.</li>
+                    <li>Conducted penetration testing and provided remediation recommendations.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== SKILLS ===== -->
+        <div class="section">
+            <h2 class="section-title">SKILLS</h2>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Programming Languages</div>
+                <div class="skills-list">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Node.js</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Web Development</div>
+                <div class="skills-list">
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">React.js</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Backend &amp; Databases</div>
+                <div class="skills-list">
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Data Science &amp; AI</div>
+                <div class="skills-list">
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Scikit-Learn</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Matplotlib</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Tools &amp; Platforms</div>
+                <div class="skills-list">
+                    <span class="skill-tag">Git/GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">PyCharm</span>
+                    <span class="skill-tag">Jupyter Notebook</span>
+                    <span class="skill-tag">Arduino IDE</span>
+                    <span class="skill-tag">MongoDB Atlas</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Soft Skills</div>
+                <div class="skills-list">
+                    <span class="skill-tag">Interpersonal Communication</span>
+                    <span class="skill-tag">Team Management</span>
+                    <span class="skill-tag">Public Speaking</span>
+                    <span class="skill-tag">Team Collaboration</span>
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Sachi Singh. All rights reserved.</p>
+        <!-- ===== PROJECTS ===== -->
+        <div class="section">
+            <h2 class="section-title">PROJECTS</h2>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title">Background Verification System</span>
+                    <span class="item-date">2026</span>
+                </div>
+                <ul>
+                    <li>Built a full-stack web portal using <span class="highlight">Node.js, Express.js, MongoDB, and Tailwind CSS</span> for candidate document verification.</li>
+                    <li>Enabled secure upload of <span class="highlight">Aadhaar, PAN, educational certificates</span> with Multer file handling.</li>
+                    <li>Implemented role-based HR verification workflow with <span class="highlight">JWT authentication</span> and bcrypt encryption.</li>
+                    <li>Generated automated <span class="highlight">PDF reports</span> (PDFKit) with real-time status tracking for candidates.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title">Geo-temporal Image Analysis for OSINT</span>
+                    <span class="item-date">In Development</span>
+                </div>
+                <ul>
+                    <li>Developing a <span class="highlight">CNN-based model</span> to predict image geolocation within SMIT campus.</li>
+                    <li>Implementing data pipeline with <span class="highlight">MakeSense.ai</span> annotation and CSV storage.</li>
+                    <li>Performing steganographic analysis using <span class="highlight">StegHide</span>.</li>
+                    <li>Planning evaluation with <span class="highlight">Precision, Recall, Confusion Matrix, and MAE</span> metrics.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title">NOC Verification Portal</span>
+                    <span class="item-date">2025</span>
+                </div>
+                <ul>
+                    <li>Engineered a full-stack web portal for NOC verification using <span class="highlight">PHP, Bootstrap, and MySQL</span>.</li>
+                    <li>Utilized PHP for server-side logic, Bootstrap for responsive frontend, and MySQL for database.</li>
+                    <li>Achieved complete end-to-end development within the project timeline.</li>
+                </ul>
+            </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <!-- ===== CERTIFICATIONS ===== -->
+        <div class="section">
+            <h2 class="section-title">CERTIFICATIONS</h2>
+            <div class="certification-item">
+                <div class="item-title">Fundamentals of Cybersecurity</div>
+                <div class="item-subtitle">Coursera (2024)</div>
+            </div>
+            <div class="certification-item">
+                <div class="item-title">Hedera Hashgraph Developer Workshop</div>
+                <div class="item-subtitle">Hedera (2024)</div>
+            </div>
+            <div class="certification-item">
+                <div class="item-title">Introduction to IoT</div>
+                <div class="item-subtitle">NPTEL (2025)</div>
+            </div>
+            <div class="certification-item">
+                <div class="item-title">3-Day Cybersecurity Workshop</div>
+                <div class="item-subtitle">Google Developer Students Club (2023)</div>
+            </div>
+            <div class="certification-item">
+                <div class="item-title">Job Simulation – Introduction to Cybersecurity</div>
+                <div class="item-subtitle">Commonwealth Bank (2026)</div>
+            </div>
+        </div>
+
+        <!-- ===== EXTRACURRICULAR ACTIVITIES ===== -->
+        <div class="section">
+            <h2 class="section-title">EXTRACURRICULAR ACTIVITIES</h2>
+            <div class="activity-item">
+                <div class="item-header">
+                    <span class="item-title">Co-Coordinator</span>
+                    <span class="item-date">2025</span>
+                </div>
+                <div class="item-subtitle">Reverbs – The Literary &amp; Debating Society, SMIT</div>
+            </div>
+            <div class="activity-item">
+                <div class="item-header">
+                    <span class="item-title">Executive Lead</span>
+                    <span class="item-date">2024</span>
+                </div>
+                <div class="item-subtitle">Reverbs – The Literary &amp; Debating Society, SMIT</div>
+            </div>
+            <div class="activity-item">
+                <div class="item-header">
+                    <span class="item-title">Cultural Secretary</span>
+                    <span class="item-date">Current</span>
+                </div>
+                <div class="item-subtitle">All Core Computer Engineering Student's Society, SMIT</div>
+            </div>
+            <div class="activity-item">
+                <div class="item-header">
+                    <span class="item-title">Member</span>
+                    <span class="item-date">2025 – Present</span>
+                </div>
+                <div class="item-subtitle">Computer Society of India – SMIT Campus</div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
